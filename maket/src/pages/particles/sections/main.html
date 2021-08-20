@@ -1,0 +1,48 @@
+<section class="section">
+    <div class="section__main">
+        {% include "./../top-line.html" %}
+        
+        <div class="container">
+            <div class="content__main">
+                <h1>RSP Partners. <br>Разрешение сложных споров <br>и комплексная защита бизнеса</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="show-case">
+                {% 
+                    set cases = [
+                        {
+                            date: 2021,
+                            type: 'Банкротство',
+                            name: 'ООО “Петя и леденцы”',
+                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.'
+                        },
+                        {
+                            date: 2020,
+                            type: 'Возврат активов',
+                            name: 'Candy Bank',
+                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.'
+                        },
+                        {
+                            date: 2019,
+                            type: 'Представительство в суде',
+                            name: 'ОАО “Норильский карамельный завод”',
+                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.'
+                        },
+                    ] 
+                %}
+
+                {% for case  in cases  %}
+                    <div class="show-case__col">
+                        {% include "./../preview_case.html" with case %}
+                    </div>
+                {% endfor %}
+                
+                <div class="show-case__col last">
+                    <a href="#" class="btn btn-arrow">Все кейсы</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
