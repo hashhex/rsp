@@ -1,11 +1,7 @@
 import gsap from "gsap";
-import {
-    ScrollToPlugin
-} from 'gsap/ScrollToPlugin'
-import {
-    ScrollTrigger
-} from "gsap/ScrollTrigger";
-
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DoSlide from 'do-slide'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
@@ -34,20 +30,7 @@ const ControlNav = {
             return false
         }
     
-        function toggleBurger (burger, i) {
-            if (!burger.classList.contains('active')) {
-                burger.classList.add('active')
-                nav_tops[i].classList.add('active')
-            } else {
-                burger.classList.remove('active')
-                nav_tops[i].classList.remove('active')
-            }
-        }
-    
-        
-    
         burgers.forEach((burger, i) => {
-            
             burger.addEventListener('click', () => {
                 this.toggle()
             })
@@ -73,61 +56,128 @@ function scrollingSections() {
         return false
     }
 
-    function goToSection(i, anim) {
-        gsap.to(window, {
-            scrollTo: {
-                y: i * innerHeight,
-                autoKill: false
-            },
-            duration: 1
-        });
+    
+    
 
-        if (anim) {
-            anim.restart();
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        var slide = new DoSlide('.ds-container', {/* configurations */})
+
+        btnUpPage(slide)
+
+        slide.onBeforeChange((curIndex, lastIndex, cur, last) => {
+            console.log(curIndex, lastIndex, cur, last);
+            ControlNav.close()
+        })
+    })
+
+    // function goToSection(i, anim) {
+    //     gsap.to(window, {
+    //         scrollTo: {
+    //             y: i * innerHeight,
+    //             autoKill: false
+    //         },
+    //         duration: 1
+    //     });
+
+    //     if (anim) {
+    //         anim.restart();
+    //     }
         
-    }
+    // }
 
-    gsap.utils.toArray(".section").forEach((panel, i) => {
-        ScrollTrigger.create({
-            trigger: panel,
-            onEnter: ({
-                progress,
-                direction,
-                isActive,
-                trigger
-            }) => {
-                goToSection(i)
-                ControlNav.close()
-                if (isActive) {
-                    sections.forEach(section => {
-                        section.classList.remove('active')
-                    })
-                    trigger.classList.add('active')
-                } else {
-                    trigger.classList.remove('active')
-                }
-            }
-        });
+    // gsap.utils.toArray(".section").forEach((panel, i) => {
+    //     ScrollTrigger.create({
+    //         trigger: panel,
+    //         onEnter: ({
+    //             progress,
+    //             direction,
+    //             isActive,
+    //             trigger
+    //         }) => {
+    //             goToSection(i)
+    //             ControlNav.close()
+    //             if (isActive) {
+    //                 sections.forEach(section => {
+    //                     section.classList.remove('active')
+    //                 })
+    //                 trigger.classList.add('active')
+    //             } else {
+    //                 trigger.classList.remove('active')
+    //             }
+    //         }
+    //     });
 
-        ScrollTrigger.create({
-            trigger: panel,
-            start: "bottom bottom",
-            onEnterBack: (self) => {
-                goToSection(i)
-                ControlNav.close()
-                if (self.isActive) {
-                    sections.forEach(section => {
-                        section.classList.remove('active')
-                    })
-                    self.trigger.classList.add('active')
-                } else {
-                    self.trigger.classList.remove('active')
-                }
-            }
-        });
-    });
+    //     ScrollTrigger.create({
+    //         trigger: panel,
+    //         start: "bottom bottom",
+    //         onEnterBack: (self) => {
+    //             goToSection(i)
+    //             ControlNav.close()
+    //             if (self.isActive) {
+    //                 sections.forEach(section => {
+    //                     section.classList.remove('active')
+    //                 })
+    //                 self.trigger.classList.add('active')
+    //             } else {
+    //                 self.trigger.classList.remove('active')
+    //             }
+    //         }
+    //     });
+    //});
 }
 
 scrollingSections()
 
+
+function previewCase() {
+    let preview_cases = document.querySelectorAll('.preview_case')
+
+    if (!preview_cases) {
+        return false
+    }
+
+    preview_cases.forEach(item => {
+        let el_transform = item.querySelector('.transform')
+        let el_content = item.querySelector('.preview_case-content')
+        if (el_content) {
+            gsap.to(el_transform, {
+                y: el_content.getBoundingClientRect().height
+            })
+        }
+    })
+
+}
+
+previewCase()
+
+function hoverButton () {
+    let button = document.querySelector('.hover-js')
+
+    if (!button) {
+        return false
+    }
+
+    button.addEventListener('mousemove', (e) => {
+        e.currentTarget.closest('.section').classList.add('hover')
+    })
+    button.addEventListener('mouseout', (e) => {
+        e.currentTarget.closest('.section').classList.remove('hover')
+    })
+}
+
+hoverButton()
+
+
+function btnUpPage (slide) {
+    let button = document.querySelector('.btn-up')
+
+    if (!button) {
+        return false
+    }
+
+    button.addEventListener('click', () => {
+        slide.go(0)
+    })
+}
+
+//btnUpPage()

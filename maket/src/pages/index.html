@@ -7,8 +7,14 @@
 <body>
 
     <div class="site">
-        {% include "particles/sections/main.html" %}
-        {% include "particles/sections/what-doing.html" %}
+        <div class="ds-parent">
+            <div class="ds-container">
+                {% include "particles/sections/main.html" %}
+                {% include "particles/sections/what-doing.html" %}
+                {% include "particles/sections/who-we.html" %}
+                {% include "particles/sections/footer.html" %}
+            </div>
+        </div>
     </div>
     
     {% include "particles/script.html" %}
