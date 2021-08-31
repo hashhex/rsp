@@ -1,0 +1,57 @@
+{% set title_page = "Blog item" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="section-blog">
+                {% include "particles/top-line.html" %}
+                
+                <div class="container">
+                    <div class="blog-content">
+                        <div class="blog-left">
+                            <h1 class="title__section">Преступник похитил у кондитерской фирмы продукцию на миллион рублей</h1>
+                            <div class="date">02.08.2021</div>
+                            <h3>Злоумышленник убедил представителей компании выгрузить товар в Москве.</h3>
+                            <p>Сотрудники правоохранительных органов Пензенской области проводят проверку хищения более 11 тонн кондитерских изделий. Как стало известно РЕН ТВ, ущерб оценивается почти 
+                                в миллион рублей.</p>
+                            <p>По предварительным данным, злоумышленник сумел договориться с представителями компании, чтобы они выгрузили товар в нужном месте. После этого преступник забрал изделия в Москве.</p>
+                            <p>Отмечается, что инцидент произошел 31 марта 2017 года. Выясняются обстоятельства хищения.</p>
+                            
+                            <div class="caption-image">
+                                <img src="assets/img/blog-item.png" alt="">
+                                <span>Схема проишествия</span>
+                            </div>
+
+                            <p>
+                                Провернуть аферу удалось с помощью фальшивого паспорта, поддельного номера на машину и водительского удостоверения, выданного на имя другого человека. 
+                            </p>
+
+                            <p>
+                                Немаловажную роль в деле сыграл тот факт, что злоумышленник воспользовался доверием курского индивидуального предпринимателя, через которого получил заказ на перевозку груза. К сведению, договор с ИП дагестанец заключил устный. 
+                            </p>
+
+                            <div class="blog-item__bottom">
+                                <a href="#" class="prev"><span></span>Все статьи</a>
+                                {% include "particles/socials.html" %}
+                            </div>
+
+                        </div>
+                        {% include "particles/aside.html" %}
+                    </div>
+                </div>
+                
+
+            </section>
+        </section>
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>

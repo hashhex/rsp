@@ -1,0 +1,84 @@
+{% set title_page = "Blog" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="section-blog">
+                {% include "particles/top-line.html" %}
+                
+                <div class="container">
+                    <h1 class="title__section">Блог</h1>
+
+                    <div class="blog">
+                        <div class="blog-grid">
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">02.08.2021</div>
+                                    <h3><a href="#">Преступник похитил у кондитерской фирмы продукцию на миллион рублей</a></h3>
+                                    <p>Чаще всего кондитерские изделия приобретаются родителями для проведения детских праздников и предназначаются для употребления детьми.</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">24.07.2021</div>
+                                    <h3><a href="#">Предприятия дошли до крайности</a></h3>
+                                    <p>Дорогостоящие начинки хотят заменить на более дешевые. Себестоимость производства кондитерских изделий в пандемию выросла примерно на 30%</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">11.06.2021</div>
+                                    <h3><a href="#">Домохозяйки вне закона. Можно ли доверять кондитерам из Instagram</a></h3>
+                                    <p>В России в последние время набирают популярность Instagram-кондитерские, где за один клик можно купить красивые и оригинальные мучные изделия.</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">10.05.2021</div>
+                                    <h3><a href="#">Последние новости кондитерского рынка</a></h3>
+                                    <p>Москва на 45% увеличила экспорт кондитерских изделий. В январе-мае 2021 года столичный экспорт кондитерских изделий составил 86,15 млн долларов США.</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">24.07.2021</div>
+                                    <h3><a href="#">Руководство страны отметило вклад Холдинга в поддержку волонтерского движения в период пандемии</a></h3>
+                                    <p>«Объединенные кондитеры» награждены памятной медалью и грамотой «За бескорыстный вклад в организацию Общероссийской акции взаимопомощи «#МыВместе» за подписью президента Российской Федерации В.В. Путина.</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="blog-col">
+                                <div class="blog-preview">
+                                    <div class="date">11.06.2021</div>
+                                    <h3><a href="#">Тенденции десертов в 2021</a></h3>
+                                    <p>Что будет популярно в 2021?! Какие десерты стоит изучить?</p>
+                                    <a href="#" class="read">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% include "particles/pagination.html" %}
+
+                    </div>
+
+                </div>
+                
+
+            </section>
+        </section>
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>
