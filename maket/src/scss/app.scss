@@ -999,6 +999,13 @@ body{
         margin: 0;
         width: 50%;
         padding-bottom: 40px;
+        a{
+            color: $dark;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
 }
 .case-carousel--wrapper{
@@ -1173,7 +1180,7 @@ body{
     }
     
 }
-
+.contacts-section ,
 .section-blog{
     .title__section{
         margin-top: 70px;
@@ -1529,4 +1536,20 @@ aside{
         line-height: 16px;
         padding-top: 20px;
     }
+}
+
+.contacts-section{
+    @media (max-width: 992px) {
+        .header-block{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.map{
+    height: 610px;
+    canvas{
+        filter: grayscale(1);
+    }
+    
 }

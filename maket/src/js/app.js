@@ -177,9 +177,17 @@ function btnUpPage (slide) {
     }
 
     button.addEventListener('click', () => {
-        slide.go(0)
+        if (document.querySelector('.ds-parent')) {
+            slide.go(0)
+        } else {
+            window.scrollTo(0,0)
+            
+        }
+        console.log('dfsdf');
     })
 }
+
+btnUpPage()
 
 function caseItem () {
     if (!document.querySelector('.case-carousel')) {
@@ -201,3 +209,4 @@ function caseItem () {
       
 }
 caseItem()
+

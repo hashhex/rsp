@@ -1,0 +1,61 @@
+{% set title_page = "Contacts" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="contacts-section">
+                {% include "particles/top-line.html" %}
+                
+                <div class="container">
+                    <div class="header-block">
+                        <h1>Контакты</h1>
+                        <p>Москва, Спиридоновка 14 <br> <a href="tel:880078743454">8 800 787 434 54</a> <br> <a href="mailto:info@rsppartner.ru">info@rsppartner.ru</a></p>
+                    </div>
+                </div>
+
+                <div id="map" class="map">
+
+                </div>
+
+                <script>
+                    var myMap;
+
+                    ymaps.ready(init);
+
+                    function init () {
+                        myMap = new ymaps.Map('map', {
+                            center: [55.760251, 37.594360],
+                            zoom: 15,
+                            controls: []
+                        });
+
+                        let myPlacemark = new ymaps.Placemark([55.760251, 37.594360], {
+                            }, {
+                                iconLayout: 'default#imageWithContent',
+                                iconImageHref: 'assets/img/icons/marker.png',
+                                iconImageSize: [72, 72],
+                                iconImageOffset: [0, 0],
+                                iconContentOffset: [0,0],
+                            });
+                    
+                        myMap.geoObjects.add(myPlacemark)
+
+                    }
+                </script>
+
+                
+
+            </section>
+        </section>
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>
