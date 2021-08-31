@@ -1,0 +1,105 @@
+{% set title_page = "Cases" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="section-cases">
+                {% include "particles/top-line.html" %}
+                <div class="container">
+                    <h1 class="title__section title__section--gray">Все кейсы</h1>
+
+                    <div class="filter-cases">
+                        <div class="filter-cases--control">
+                            <ul>
+                                <li><a class="blue active" href="#">Судебные споры <span></span></a></li>
+                                <li><a class="red" href="#">Банкротство <span></span></a></li>
+                                <li><a class="green" href="#">Строительство <span></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="filter-cases--content">
+                            <div class="show-case">
+                                {% 
+                                    set cases = [
+                                        {
+                                            date: 2021,
+                                            type: 'Банкротство',
+                                            name: 'ООО “Петя и леденцы”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'blue',
+                                        },
+                                        {
+                                            date: 2020,
+                                            type: 'Возврат активов',
+                                            name: 'Candy Bank',
+                                            description: 'Принимая во внимание показатели asdfsdfsd fsd fsdf sd fd fsdfsdfsdfsdf sdfs df успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'red',
+                                        },
+                                        {
+                                            date: 2019,
+                                            type: 'Представительство в суде',
+                                            name: 'ОАО “Норильский карамельный завод”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'green',
+                                        },
+                                        {
+                                            date: 2021,
+                                            type: 'Банкротство',
+                                            name: 'ООО “Петя и леденцы”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'blue',
+                                        },
+                                        {
+                                            date: 2020,
+                                            type: 'Возврат активов',
+                                            name: 'Candy Bank',
+                                            description: 'Принимая во внимание показатели asdfsdfsd fsd fsdf sd fd fsdfsdfsdfsdf sdfs df успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'red',
+                                        },
+                                        {
+                                            date: 2019,
+                                            type: 'Представительство в суде',
+                                            name: 'ОАО “Норильский карамельный завод”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'green',
+                                        },
+                                        {
+                                            date: 2019,
+                                            type: 'Представительство в суде',
+                                            name: 'ОАО “Норильский карамельный завод”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'blue',
+                                        },
+                                        {
+                                            date: 2021,
+                                            type: 'Банкротство',
+                                            name: 'ООО “Петя и леденцы”',
+                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
+                                            class: 'red',
+                                        },
+                                    ] 
+                                %}
+                
+                                {% for case  in cases  %}
+                                    <div class="show-case__col">
+                                        {% include "particles/preview_case.html" with case %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>

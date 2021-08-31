@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DoSlide from 'do-slide'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+import Swiper , { Navigation, Pagination } from 'swiper/core'
+Swiper.use([Navigation, Pagination])
 
 const ControlNav = {
     burgers: document.querySelectorAll('.burger'),
@@ -56,16 +58,15 @@ function scrollingSections() {
         return false
     }
 
-    
-    
-
     document.addEventListener('DOMContentLoaded', () => {
+        if (!document.querySelector('.ds-container')) {
+            return false
+        }
         var slide = new DoSlide('.ds-container', {/* configurations */})
 
         btnUpPage(slide)
 
         slide.onBeforeChange((curIndex, lastIndex, cur, last) => {
-            console.log(curIndex, lastIndex, cur, last);
             ControlNav.close()
         })
     })
@@ -180,4 +181,23 @@ function btnUpPage (slide) {
     })
 }
 
-//btnUpPage()
+function caseItem () {
+    if (!document.querySelector('.case-carousel')) {
+        return false
+    }
+    const swiper = new Swiper('.case-carousel', {
+        spaceBetween: 50,
+        pagination: {
+            el: ".case-carousel--wrapper .swiper-pagination",
+            type: "fraction",
+          },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.case-carousel--wrapper .swiper-button-next',
+          prevEl: '.case-carousel--wrapper .swiper-button-prev',
+        },
+      });
+      
+}
+caseItem()

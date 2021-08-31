@@ -1,0 +1,60 @@
+{% set title_page = "Case Item" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="section-cases section-cases__item">
+                {% include "particles/top-line.html" %}
+                
+                <div class="container">
+                    <div class="header-block">
+                        <h1>Банкротство  <br>ООО “Петя и леденцы”</h1>
+                        <p>Aliquam lacus, est malesuada aenean blandit nulla sapien ut. Luctus tortor vel amet orci. Dignissim varius commodo tincidunt integer mattis dolor cras. Odio venenatis interdum justo, risus phasellus eget varius tellus cras. Duis euismod porta parturient tincidunt viverra penatibus donec dui. Leo tempor quam in egestas lectus risus.</p>
+                    </div>
+
+                    <div class="case-carousel--wrapper">
+                        <div class="swiper-container case-carousel">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                  <div class="case-slide">
+                                      <img src="assets/img/case-item/1.jpg" alt="">
+                                      <h3>Ноябрь 2020</h3>
+                                      <p>Laoreet bibendum faucibus neque et. Est tortor urna imperdiet penatibus interdum. Vestibulum suspendisse dui lorem molestie nulla. Ultricies tellus eu quam ut.</p>
+                                  </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="case-slide">
+                                    <img src="assets/img/case-item/2.jpg" alt="">
+                                    <h3>Декабрь 2020</h3>
+                                    <p>Laoreet bibendum faucibus neque et. Est tortor urna imperdiet penatibus interdum. Vestibulum suspendisse dui lorem molestie nulla. Ultricies tellus eu quam ut.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                            
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+
+
+                </div>
+
+                
+
+            </section>
+        </section>
+        {% include "particles/sections/other_case.html" %}
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>

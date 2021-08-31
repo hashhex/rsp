@@ -1,8 +1,11 @@
-<section class="section">
+<section class="section {{ footer_active }}">
     <div class="section__footer">
-        {% include "./../top-line.html" %}
+        {% if footer_active %}
+        {% else %}
+            {% include "./../top-line.html" %}
+        {% endif %}
         <div class="container">
-            <ul>
+            <ul class="list-footer">
                 <li>Москва</li>
                 <li><a href="tel:880078743454">8 800 787 434 54</a></li>
                 <li><a href="mailto:info@rsplaw.net">info@rsplaw.net</a></li>
