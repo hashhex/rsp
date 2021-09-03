@@ -1,4 +1,4 @@
-{% set title_page = "Cases" %}
+{% set title_page = "Services" %}
 {% set footer_active = "active non-shadow" %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,19 +9,16 @@
 
     <div class="site">
         <section class="section active section-heigth--auto">
-            <section class="section-cases">
+            <section class="section-services">
                 {% include "particles/top-line.html" %}
+                
                 <div class="container">
-                    <h1 class="title__section title__section--gray">Все кейсы</h1>
+                    <div class="header-block">
+                        <h1>Судебные споры</h1>
+                        <p>Laoreet bibendum faucibus neque et. Est tortor urna imperdiet penatibus interdum. Vestibulum suspendisse dui lorem molestie nulla. Ultricies tellus eu quam ut. Dolor a purus porta magna aliquet tortor. Platea faucibus vitae eu, leo. Sem sed eros magna urna. Dui congue suspendisse scelerisque nam sapien. Aliquet pellentesque non ipsum orci diam.</p>
+                    </div>
 
                     <div class="filter-cases">
-                        <div class="filter-cases--control">
-                            <ul>
-                                <li><a class="blue active" href="#">Судебные споры <span></span></a></li>
-                                <li><a class="red" href="#">Банкротство <span></span></a></li>
-                                <li><a class="green" href="#">Строительство <span></span></a></li>
-                            </ul>
-                        </div>
                         <div class="filter-cases--content">
                             <div class="show-case">
                                 {% 
@@ -67,21 +64,7 @@
                                             name: 'ОАО “Норильский карамельный завод”',
                                             description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
                                             class: 'empty',
-                                        },
-                                        {
-                                            date: 2019,
-                                            type: 'Представительство в суде',
-                                            name: 'ОАО “Норильский карамельный завод”',
-                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
-                                            class: 'empty',
-                                        },
-                                        {
-                                            date: 2021,
-                                            type: 'Банкротство',
-                                            name: 'ООО “Петя и леденцы”',
-                                            description: 'Принимая во внимание показатели успешности, курс на национальный проект обеспечивает актуальность требований.',
-                                            class: 'empty',
-                                        },
+                                        }
                                     ] 
                                 %}
                 
@@ -93,10 +76,15 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+
+                
 
             </section>
         </section>
+        {% include "particles/sections/other_case.html" %}
         {% include "particles/sections/footer.html" %}
     </div>
     

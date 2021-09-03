@@ -1,0 +1,57 @@
+{% set title_page = "Gide" %}
+{% set footer_active = "active non-shadow" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "particles/head.html" %}
+</head>
+<body>
+
+    <div class="site">
+        <section class="section active section-heigth--auto">
+            <section class="section-blog">
+                {% include "particles/top-line.html" %}
+                
+
+                <div class="container">
+                    <div class="blog-content">
+                        <div class="blog-left">
+                            <h1 class="title__section">Guide</h1>
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="index.html">главная</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="contacts.html">контакты</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="cases.html">кейсы</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="case-item.html">кейс</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="blog.html">блог</a>
+                                </li>
+                                <li>
+                                    <a href="blog-item.html">статья</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">услуги</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        {% include "particles/aside.html" %}
+                    </div>
+                </div>
+                
+
+            </section>
+        </section>
+        {% include "particles/sections/footer.html" %}
+    </div>
+    
+    {% include "particles/script.html" %}
+</body>
+</html>
