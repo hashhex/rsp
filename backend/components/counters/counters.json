@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_counters_counters",
+  "info": {
+    "name": "counters",
+    "icon": "sort-numeric-down-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "id_account": {
+      "type": "string"
+    },
+    "account": {
+      "type": "enumeration",
+      "enum": [
+        "_yandex",
+        "_google",
+        "_pixel"
+      ]
+    }
+  }
+}

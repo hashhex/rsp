@@ -23,5 +23,5 @@ module.exports = {
             data.slug = slugify(data.title, option_slugify);
           }
         },
-      },
+    }
 };
