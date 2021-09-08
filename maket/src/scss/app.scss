@@ -410,7 +410,7 @@ body{
         position: absolute;
         left: 0;
         top: 50%;
-        z-index: -1;
+        z-index: 1;
         transform: translateY(-50%);
         transition: all .25s ease;
     }
@@ -431,6 +431,8 @@ body{
     }
     .transform{
         transition: all .25s ease-in-out;
+        position: relative;
+        z-index: 3;
     }
     &-date{
         color: #838388;
@@ -458,6 +460,8 @@ body{
         visibility: hidden;
         transition: all .25s ease-in-out;
         opacity: 0;
+        position: relative;
+        z-index: 3;
         .description{
             padding: 20px 0;
             font-family: $IBM;
@@ -1286,7 +1290,11 @@ body{
     }
     &-left{
         width: calc(100% - 370px);
+        max-width: 945px;
         padding-right: 30px;
+        @media (max-width: 1500px) {
+            padding-right: 60px;
+        }
         @media (max-width: 992px) {
             width: 100%;
             padding-right: 0;
@@ -1612,5 +1620,12 @@ aside{
         @media (max-width: 700px) {
             margin-bottom: 70px;
         }
+    }
+}
+
+.contacts-section{
+    .header-block p{
+        font-size: 26px;
+        line-height: 36px;
     }
 }
