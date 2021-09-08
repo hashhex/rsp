@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_cases_case_elements",
+  "info": {
+    "name": "case_elements",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "carousel": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "index_pages",
+  "info": {
+    "name": "Index_page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-data"
+    },
+    "header": {
+      "type": "richtext"
+    },
+    "who_are": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_meta_meta_data",
+  "info": {
+    "name": "meta_data",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "key": {
+      "type": "text"
+    }
+  }
+}
