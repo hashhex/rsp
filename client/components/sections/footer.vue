@@ -6,9 +6,9 @@
             </template>
             <div class="container">
                 <ul class="list-footer">
-                    <li>Москва</li>
-                    <li><a href="tel:880078743454">8 800 787 434 54</a></li>
-                    <li><a href="mailto:info@rsplaw.net">info@rsplaw.net</a></li>
+                    <li>{{ SETTINGS.address }}</li>
+                    <li><a :href="`tel:${SETTINGS.phone}`">{{ SETTINGS.phone }}</a></li>
+                    <li><a :href="`mailto:${SETTINGS.email}`">{{ SETTINGS.email }}</a></li>
                     <li><a href="#">Политика конфиденциальности</a></li>
                 </ul>
             </div>
@@ -22,12 +22,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import TopLine from '~/components/TopLine'
 
 export default {
     name: 'sectionFooter',
     props: {
         active: {}
+    },
+    computed: {
+        ...mapState({
+            SETTINGS: state => state.settings
+        })
     },
     components: {
         TopLine
