@@ -1,0 +1,45 @@
+<template>
+    <div class="top-line">
+        <div class="container">
+            <div class="top-line__content">
+                <div class="logo">
+                    <nuxt-link to="/">
+                        <img src="~assets/img/logo.svg" width="161" alt="rsp">
+                    </nuxt-link>
+                </div>
+
+                <div class="top-line__right">
+                    <nav class="nav-top">
+                        <ul>
+                            <li>
+                                <a href="#">Что мы делаем</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">Судебные споры</a>
+                                        <a href="#">Банкротство</a>
+                                        <a href="#">Строительство</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Кейсы</a>
+                            </li>
+                            <li>
+                                <a href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="burger">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'topLine'
+}
+</script>

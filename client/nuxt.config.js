@@ -13,15 +13,23 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: '/js/app.js', body: true },
+      { src: '/js/do-slide.min.js', body: true },
+      { src: 'https://unpkg.com/swiper@7/swiper-bundle.min.js', body: true },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/css/app",
+    "@/assets/scss/app"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src:'~/plugins/gsap.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -29,7 +37,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/moment'
   ],
+
+  moment: {
+    defaultLocale: 'ru',
+    locales: ['ru']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -38,7 +52,12 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseUrl: 'http://localhost:1337'
+  },
+  env: {
+    backend: 'http://localhost:1337'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

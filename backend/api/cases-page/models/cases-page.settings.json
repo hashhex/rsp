@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "cases_pages",
+  "info": {
+    "name": "cases_page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-data"
+    }
+  }
+}
