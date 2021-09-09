@@ -54,7 +54,7 @@ export default {
     methods: {
         previewCases () {
             let preview_cases = document.querySelectorAll('.preview_case')
-            console.log(preview_cases);
+            
             preview_cases.forEach(item => {
                 let el_transform = item.querySelector('.transform')
                 let el_content = item.querySelector('.preview_case-content')

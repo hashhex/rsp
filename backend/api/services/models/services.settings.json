@@ -25,6 +25,14 @@
         "blue",
         "green"
       ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-data"
     }
   }
 }

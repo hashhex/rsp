@@ -1,48 +1,52 @@
 <template>
-    <section class="section active section-heigth--auto">
-            <section class="section-cases section-cases__item">
-                <TopLine />
-                <template v-if="!CASE_ITEM">
-                    Загрузка...
-                </template>
-                <template v-if="CASE_ITEM && !CASE_ITEM.length">
-                    Ни чего не найдено.
-                </template>
-                <template v-if="CASE_ITEM && CASE_ITEM.length">
-                    <MetaData :meta-data="CASE_ITEM[0].meta_data" />
-                    <div class="container">
-                        <div class="header-block">
-                            <h1>{{ CASE_ITEM[0].title }}</h1>
-                            <p>{{ CASE_ITEM[0].preview_text }}</p>
-                        </div>
+    <div>
+        <section class="section active section-heigth--auto">
+                <section class="section-cases section-cases__item">
+                    <TopLine />
+                    <template v-if="!CASE_ITEM">
+                        Загрузка...
+                    </template>
+                    <template v-if="CASE_ITEM && !CASE_ITEM.length">
+                        Ни чего не найдено.
+                    </template>
+                    <template v-if="CASE_ITEM && CASE_ITEM.length">
+                        <MetaData :meta-data="CASE_ITEM[0].meta_data" />
+                        <div class="container">
+                            <div class="header-block">
+                                <h1>{{ CASE_ITEM[0].title }}</h1>
+                                <p>{{ CASE_ITEM[0].preview_text }}</p>
+                            </div>
 
-                        <div v-if="CASE_ITEM[0].case_elements && CASE_ITEM[0].case_elements.length" class="case-carousel--wrapper">
-                            <div :mySwiper="swiperOption" class="swiper-container case-carousel">
-                                <div class="swiper-wrapper">
-                                    <div v-for="slide of CASE_ITEM[0].case_elements" :key="slide.id" class="swiper-slide">
-                                        <div class="case-slide">
-                                            <img :src="backend + slide.carousel.url" :alt="slide.name">
-                                            <div v-html="contentMarked(slide.content)"></div>
+                            <div v-if="CASE_ITEM[0].case_elements && CASE_ITEM[0].case_elements.length" class="case-carousel--wrapper">
+                                <div :mySwiper="swiperOption" class="swiper-container case-carousel">
+                                    <div class="swiper-wrapper">
+                                        <div v-for="slide of CASE_ITEM[0].case_elements" :key="slide.id" class="swiper-slide">
+                                            <div class="case-slide">
+                                                <img :src="backend + slide.carousel.url" :alt="slide.name">
+                                                <div v-html="contentMarked(slide.content)"></div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                    
                                 </div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
-                                
+                                <div class="swiper-pagination"></div>
                             </div>
-                            <div class="swiper-pagination"></div>
+
+
+
                         </div>
+                    </template>
+                    
 
+                    
 
-
-                    </div>
-                </template>
-                
-
-                
-
-            </section>
+                </section>
         </section>
+        <OtherCases />
+        <Footer :active="'active non-shadow'" />
+    </div>
 </template>
 
 <script>
@@ -50,6 +54,8 @@ import { mapState } from 'vuex'
 import marked from 'marked'
 import TopLine from '~/components/TopLine'
 import MetaData from '~/components/Meta'
+import OtherCases from '~/components/sections/otherCases'
+import Footer from '~/components/sections/footer'
 
 export default {
     name: 'casesItem',
@@ -109,7 +115,9 @@ export default {
     },
     components: {
         TopLine,
-        MetaData
+        MetaData,
+        OtherCases,
+        Footer
     }
 }
 </script>

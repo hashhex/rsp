@@ -1,7 +1,9 @@
 export const state = () => ({
     pages: {
         index: null,
-        cases: null
+        cases: null,
+        services: null,
+        blogs: null
     }
 })
 
