@@ -1,6 +1,6 @@
 <template>
     <section class="section active section-heigth--auto">
-        <div class="section__what-doing">
+        <div v-if="SERVICES_PAGE" class="section__what-doing">
             <TopLine />
             <MetaData :meta-data="SERVICES_PAGE.meta_data" />
             <div class="container">

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "policy_pages",
+  "info": {
+    "name": "policy_page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-data"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

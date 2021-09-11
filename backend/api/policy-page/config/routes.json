@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/policy-page",
+      "handler": "policy-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/policy-page",
+      "handler": "policy-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/policy-page",
+      "handler": "policy-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

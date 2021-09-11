@@ -3,7 +3,9 @@ export const state = () => ({
         index: null,
         cases: null,
         services: null,
-        blogs: null
+        blogs: null,
+        contacts: null,
+        policy: null
     }
 })
 

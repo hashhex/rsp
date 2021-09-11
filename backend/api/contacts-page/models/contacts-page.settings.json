@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts_pages",
+  "info": {
+    "name": "contacts_page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-data"
+    }
+  }
+}

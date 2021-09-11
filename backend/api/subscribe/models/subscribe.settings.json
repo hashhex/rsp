@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscribes",
+  "info": {
+    "name": "subscribe",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

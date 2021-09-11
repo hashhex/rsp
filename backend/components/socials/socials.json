@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_socials_socials",
+  "info": {
+    "name": "socials",
+    "icon": "hand-scissors"
+  },
+  "options": {},
+  "attributes": {
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "socials.social"
+    }
+  }
+}

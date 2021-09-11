@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations",
+  "info": {
+    "name": "consultations",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}

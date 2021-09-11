@@ -28,6 +28,11 @@
     },
     "coords": {
       "type": "string"
+    },
+    "soc": {
+      "type": "component",
+      "repeatable": false,
+      "component": "socials.socials"
     }
   }
 }

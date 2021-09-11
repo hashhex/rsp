@@ -46,5 +46,34 @@ export const actions = {
             commit('SETTINGS', [])
             console.error('settings: ', error);
         }
+    },
+    async Subscribe (_,payload) {
+        try {
+            const { status, data } = await this.$axios.post('/subscribes', payload)
+
+            if (status === 200) {
+                return true
+            } else {
+                return false
+            }
+        } catch (error) {
+            console.error('subscribe-error ', error);
+            return false
+        }
+    },
+    async Consultation (_ , payload) {
+        try {
+            const { status, data } = await this.$axios.post('/consultations', payload)
+
+            if (status === 200) {
+                return true
+            } else {
+                console.error('consultation-error ', status);
+                return false
+            }
+        } catch (error) {
+            console.error('consultation-error ', error);
+            return false
+        }
     }
 }

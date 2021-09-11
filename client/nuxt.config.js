@@ -12,12 +12,16 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', crossorigin: true, href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', crossorigin: true, href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=PT+Serif:wght@400;700&display=swap' },
     ],
     script: [
       { src: '/js/app.js', body: true },
       { src: '/js/do-slide.min.js', body: true },
       { src: 'https://unpkg.com/swiper@7/swiper-bundle.min.js', body: true },
+      { src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', body: true },
     ]
   },
 

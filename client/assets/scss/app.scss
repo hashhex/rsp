@@ -1,0 +1,206 @@
+.pagination {
+    ul{
+        li{
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-last-child(2),
+            &:nth-last-child(1) {
+                display: none;
+            }
+            button{
+                border: none;
+                padding: 0;
+                background: transparent;
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+            &.active {
+                button{
+                    opacity: 1;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.section__what-doing{
+    min-height: 100vh;
+}
+
+.section-consultation {
+    padding: 180px 0;
+    background-color: #202022;
+    @media (max-width: 1200px) {
+        padding: 80px 0;
+    }
+}
+
+.consultation{
+    display: flex;
+    flex-wrap: wrap;
+    
+    &-left{
+        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: #fff;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+        h2{
+            margin-top: 0;
+            font-size: 64px;
+            line-height: 84px;
+            margin-bottom: 25px;
+            font-weight: normal;
+            @media (max-width: 1200px) {
+                font-size: 36px;
+                line-height: 1;
+            }
+        }
+        p{
+            max-width: 500px;
+            margin-top: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 26px;
+            line-height: 36px;
+            @media (max-width: 1200px) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    &-right{
+        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+    }
+}
+
+.success{
+    color: #fff;
+    padding-top: 20px;
+    h3{
+        margin-top: 0;
+        font-size: 36px;
+        line-height: 1;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    p{
+        max-width: 500px;
+        margin-top: 0;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.consultaion-form{
+    .fieldset{
+        input{
+            background-color:transparent;
+            color: #fff;
+            opacity: 1;
+            font-size: 26px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 400;
+            border-bottom-color: #fff;
+            @media (max-width: 1200px) {
+                font-size: 16px;
+            }
+            &::placeholder{
+                color: #fff;
+                opacity: 1;
+                font-size: 26px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 400;
+                @media (max-width: 1200px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .btn-arrow{
+        background-color: transparent;
+        color: #fff;
+        border-color: #fff;
+        @media (max-width: 650px) {
+            width: 100%;
+            justify-content: center;
+        }
+        span{
+            background-color: #fff;
+            line-height: 1 !important;
+            padding: 0 !important;
+            @media (max-width: 1200px) {
+                display: none;
+            }
+            &::before{
+                border-top-color: #fff;
+                border-right-color: #fff;
+            }
+        }
+    }
+
+    .form-bottom{
+        padding-top: 60px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        @media (max-width: 1200px) {
+            padding-top: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .btn{
+            margin-right: 30px;
+            height: 112px;
+            @media (max-width: 1200px) {
+                margin-bottom: 20px;
+                margin-right: 0;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                height: auto;
+                font-size: 20px;
+            }
+        }
+        .policy{
+            font-size: 16px;
+            line-height: 20px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            padding-top: 0;
+            @media (max-width: 1200px) {
+
+            }
+            a{
+                color: #fff;
+                text-decoration: underline;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.section-policy{
+    h1{
+        font-size: 64px;
+        line-height: 84px;
+        color: #202022;
+        margin-top: 0;
+        margin-bottom: 70px;
+        font-weight: 400;
+        @media (max-width: 992px) {
+            font-size: 30px;
+            line-height: 1;
+        }
+    }
+}

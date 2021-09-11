@@ -9,11 +9,11 @@
                     <li>{{ SETTINGS.address }}</li>
                     <li><a :href="`tel:${SETTINGS.phone}`">{{ SETTINGS.phone }}</a></li>
                     <li><a :href="`mailto:${SETTINGS.email}`">{{ SETTINGS.email }}</a></li>
-                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><nuxt-link to="/policy">Политика конфиденциальности</nuxt-link></li>
                 </ul>
             </div>
             <div class="wrap-btn">
-                <div class="btn-up">
+                <div @click="btnUp" class="btn-up">
                     <span></span>
                 </div>
             </div>
@@ -34,6 +34,11 @@ export default {
         ...mapState({
             SETTINGS: state => state.settings
         })
+    },
+    methods: {
+        btnUp () {
+            window.scrollTo(0,0)
+        }
     },
     components: {
         TopLine

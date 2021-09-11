@@ -9,27 +9,10 @@
                 </div>
 
                 <div class="top-line__right">
-                    <nav class="nav-top">
-                        <ul>
-                            <li>
-                                <a href="#">Что мы делаем</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="#">Судебные споры</a>
-                                        <a href="#">Банкротство</a>
-                                        <a href="#">Строительство</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Кейсы</a>
-                            </li>
-                            <li>
-                                <a href="#">Контакты</a>
-                            </li>
-                        </ul>
+                    <nav  class="nav-top">
+                        <Menu />
                     </nav>
-                    <div class="burger">
+                    <div @click="Burger" class="burger">
                         <span></span><span></span><span></span>
                     </div>
                 </div>
@@ -39,7 +22,57 @@
 </template>
 
 <script>
+import Menu from '~/components/TopLine/nav'
+
 export default {
-    name: 'topLine'
+    name: 'topLine',
+    components: {
+        Menu
+    },
+    methods: {
+        Burger () {
+            const ControlNav = {
+                burgers: document.querySelectorAll('.burger'),
+                nav_tops: document.querySelectorAll('.nav-top'),
+
+                toggle: function () {
+                    this.burgers.forEach((burger, i) => {
+                        if (!burger.classList.contains('active')) {
+                            burger.classList.add('active')
+                            this.nav_tops[i].classList.add('active')
+                        } else {
+                            burger.classList.remove('active')
+                            this.nav_tops[i].classList.remove('active')
+                        }
+                    })
+                },
+                handler: function () {
+                    /*
+                    * Burger & NavTop их много так что все через querySelectorAll
+                    */ 
+                    let burgers = this.burgers
+                    let nav_tops = this.nav_tops
+                
+                    if (!burgers || !nav_tops) {
+                        return false
+                    }
+                
+                    burgers.forEach((burger, i) => {
+                        burger.addEventListener('click', () => {
+                            this.toggle()
+                        })
+                    })
+                },
+                close: function () {
+                    this.burgers.forEach((burger, i) => {
+                        burger.classList.remove('active')
+                        this.nav_tops[i].classList.remove('active')
+                    })
+                }
+
+            }
+            ControlNav.handler()
+        }
+    },
 }
 </script>
