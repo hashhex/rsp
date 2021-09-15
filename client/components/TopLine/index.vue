@@ -9,10 +9,10 @@
                 </div>
 
                 <div class="top-line__right">
-                    <nav  class="nav-top">
+                    <nav ref="nav" :class="IS_BURGER ? 'active' : ''" class="nav-top">
                         <Menu />
                     </nav>
-                    <div @click="Burger" class="burger">
+                    <div @click="Burger" ref="burger" :class="IS_BURGER ? 'active' : ''" class="burger">
                         <span></span><span></span><span></span>
                     </div>
                 </div>
@@ -22,56 +22,27 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Menu from '~/components/TopLine/nav'
 
 export default {
     name: 'topLine',
+    computed: {
+        ...mapState({
+          IS_BURGER: state => state.burger
+        })
+
+    },
     components: {
         Menu
     },
     methods: {
         Burger () {
-            const ControlNav = {
-                burgers: document.querySelectorAll('.burger'),
-                nav_tops: document.querySelectorAll('.nav-top'),
-
-                toggle: function () {
-                    this.burgers.forEach((burger, i) => {
-                        if (!burger.classList.contains('active')) {
-                            burger.classList.add('active')
-                            this.nav_tops[i].classList.add('active')
-                        } else {
-                            burger.classList.remove('active')
-                            this.nav_tops[i].classList.remove('active')
-                        }
-                    })
-                },
-                handler: function () {
-                    /*
-                    * Burger & NavTop их много так что все через querySelectorAll
-                    */ 
-                    let burgers = this.burgers
-                    let nav_tops = this.nav_tops
-                
-                    if (!burgers || !nav_tops) {
-                        return false
-                    }
-                
-                    burgers.forEach((burger, i) => {
-                        burger.addEventListener('click', () => {
-                            this.toggle()
-                        })
-                    })
-                },
-                close: function () {
-                    this.burgers.forEach((burger, i) => {
-                        burger.classList.remove('active')
-                        this.nav_tops[i].classList.remove('active')
-                    })
-                }
-
+            if (!this.IS_BURGER) {
+              this.$store.commit('BURGER', true)
+            } else {
+              this.$store.commit('BURGER', false)
             }
-            ControlNav.handler()
         }
     },
 }

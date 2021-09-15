@@ -204,3 +204,48 @@
         }
     }
 }
+
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+.section__who-we{
+    .btn-arrow{
+        background-color: transparent !important;
+    }
+}
+
+.preview_case{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.section__footer .list-footer li {
+    a{
+        display: inline-block;
+        position: relative;
+        &:hover{
+            text-decoration: none;
+            &::before{
+                opacity: 1;
+            }
+        }
+        &::before{
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            opacity: 0;
+            transition: all .25s ease;
+        }
+    }
+}

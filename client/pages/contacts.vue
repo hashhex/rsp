@@ -46,10 +46,9 @@ export default {
             ymaps.ready(init);
             
             let coords = this.SETTINGS.coords.split(',').map(item => Number(item.trim()))
-            console.log(coords);
+
             function init() {
 
-                console.log(coords);
                 myMap = new ymaps.Map('map', {
                     center: coords,
                     zoom: 15,
@@ -60,7 +59,7 @@ export default {
                     }, {
                         iconLayout: 'default#imageWithContent',
                         iconImageHref: '/marker.png',
-                        iconImageSize: [72, 72],
+                        iconImageSize: [111, 106],
                         iconImageOffset: [0, 0],
                         iconContentOffset: [0,0],
                     });

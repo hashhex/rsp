@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section ref="section" @mouseenter="enter" class="section">
         <div class="section__who-we">
             <TopLine />
             <span class="bubble bubble-1"></span>
@@ -10,7 +10,7 @@
                 <div class="description-section text-center">
                     <div v-html="markedContent"></div>
                     <div class="wrap-btn">
-                        <a @mouseenter="enter" @mouseout="out" href="#" class="btn btn-arrow hover-js">
+                        <a  @mouseleave="out" href="#" class="btn btn-arrow hover-js">
                             Наши кейсы
                             <span></span>
                         </a>
@@ -37,10 +37,18 @@ export default {
     },
     methods: {
         enter (e) {
-            e.currentTarget.closest('.section').classList.add('hover')
+          console.log(e.target)
+          if (e.currentTarget.classList.contains('btn-arrow')) {
+            this.$refs.section.classList.add('hover')
+            console.log(this.$refs.section, 'hover')
+          } else {
+            this.$refs.section.classList.remove('hover')
+            console.log(this.$refs.section, 'unhover')
+          }
+
         },
         out (e) {
-            e.currentTarget.closest('.section').classList.remove('hover')
+
         }
     },
     components: {

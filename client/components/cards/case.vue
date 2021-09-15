@@ -1,5 +1,5 @@
 <template>
-    <div :class="!color ? '' : cases.service.color" class="preview_case">
+    <div :class="!color ? '' : cases.service.color" @click="page" class="preview_case">
         <div class="transform">
             <div class="preview_case-date">{{ $moment(cases.date).format('YYYY') }}</div>
             <div class="preview_case-title">
@@ -33,6 +33,11 @@ export default {
         ...mapState({
             SERVICES: state => state.services
         })
+    },
+  methods: {
+    page () {
+      this.$router.push(`/cases/${this.cases.slug}`)
     }
+  }
 }
 </script>

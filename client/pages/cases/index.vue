@@ -78,15 +78,18 @@ export default {
     },
     methods: {
         filterHandler (filter) {
-            console.log('add ', filter);
             this.activeFilter.push(filter)
         },
         deletFilter (filter) {
-            console.log('remove ', filter);
             this.activeFilter = this.activeFilter.filter(item => item !== filter)
         }
     },
     mounted () {
+      if (this.SERVICES) {
+        this.SERVICES.forEach(item => {
+          this.activeFilter.push(item.slug)
+        })
+      }
     },
     components: {
         TopLine,

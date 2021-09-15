@@ -55,46 +55,7 @@ export default {
   },
   methods: {
     scrollPage () {
-      const ControlNav = {
-          burgers: document.querySelectorAll('.burger'),
-          nav_tops: document.querySelectorAll('.nav-top'),
-          toggle: function () {
-              this.burgers.forEach((burger, i) => {
-                  if (!burger.classList.contains('active')) {
-                      burger.classList.add('active')
-                      this.nav_tops[i].classList.add('active')
-                  } else {
-                      burger.classList.remove('active')
-                      this.nav_tops[i].classList.remove('active')
-                  }
-              })
-          },
-          handler: function () {
-              /*
-              * Burger & NavTop их много так что все через querySelectorAll
-              */ 
-              let burgers = this.burgers
-              let nav_tops = this.nav_tops
-          
-              if (!burgers || !nav_tops) {
-                  return false
-              }
-          
-              burgers.forEach((burger, i) => {
-                  burger.addEventListener('click', () => {
-                      this.toggle()
-                  })
-              })
-          },
-          close: function () {
-              this.burgers.forEach((burger, i) => {
-                  burger.classList.remove('active')
-                  this.nav_tops[i].classList.remove('active')
-              })
-          }
-
-      }
-      function scrollingSections() {
+      const scrollingSections = () => {
           let sections = document.querySelectorAll('.section')
           if (!sections) {
               return false
@@ -107,7 +68,7 @@ export default {
               btnUpPage(slide)
 
               slide.onBeforeChange((curIndex, lastIndex, cur, last) => {
-                  ControlNav.close()
+                this.$store.commit('BURGER', false)
               })
       }
       function btnUpPage (slide) {
@@ -122,9 +83,7 @@ export default {
                   slide.go(0)
               } else {
                   window.scrollTo(0,0)
-                  
               }
-              console.log('dfsdf');
           })
       }
       scrollingSections()

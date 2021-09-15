@@ -1,6 +1,7 @@
 export const state = () => ({
     services: null,
-    settings: null
+    settings: null,
+    burger: false
 })
 
 export const mutations = {
@@ -9,6 +10,9 @@ export const mutations = {
     },
     SETTINGS (state, payload) {
         state.settings = payload
+    },
+    BURGER (state, payload) {
+        state.burger = payload
     }
 }
 

@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', crossorigin: true, href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', crossorigin: true, href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=PT+Serif:wght@400;700&display=swap' },
+      { rel: 'stylesheet', crossorigin: true, href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;700&family=PT+Sans:wght@400;700&display=swap' },
     ],
     script: [
       { src: '/js/app.js', body: true },
@@ -57,10 +57,10 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseUrl: 'http://localhost:1337'
+    baseUrl: 'https://rsp.fvds.ru/api'
   },
   env: {
-    backend: 'http://localhost:1337'
+    backend: 'https://rsp.fvds.ru/api'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
