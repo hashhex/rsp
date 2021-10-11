@@ -10,10 +10,10 @@
                 <div class="description-section text-center">
                     <div v-html="markedContent"></div>
                     <div class="wrap-btn">
-                        <a  @mouseleave="out" href="#" class="btn btn-arrow hover-js">
-                            Наши кейсы
+                        <nuxt-link  @mouseleave="out" to="/about" class="btn btn-arrow hover-js">
+                            Кто мы
                             <span></span>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>

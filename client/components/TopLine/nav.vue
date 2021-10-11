@@ -9,7 +9,13 @@
             </ul>
         </li>
         <li>
+          <nuxt-link to="/blog">Блог</nuxt-link>
+        </li>
+        <li>
             <nuxt-link to="/cases">Кейсы</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/about">Кто мы?</nuxt-link>
         </li>
         <li>
             <nuxt-link to="/contacts">Контакты</nuxt-link>

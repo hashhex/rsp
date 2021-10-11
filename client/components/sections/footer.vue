@@ -17,6 +17,11 @@
                     <span></span>
                 </div>
             </div>
+          <div class="mad-7">
+            <a target="_blank" href="https://mad7.ru">
+              <img src="~/assets/img/logo-mad7.svg" width="146" alt="mad7">
+            </a>
+          </div>
         </div>
     </section>
 </template>

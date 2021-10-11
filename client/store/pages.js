@@ -5,7 +5,8 @@ export const state = () => ({
         services: null,
         blogs: null,
         contacts: null,
-        policy: null
+        policy: null,
+        about: null
     }
 })
 

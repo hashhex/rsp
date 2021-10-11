@@ -31,7 +31,6 @@ export default {
         ...mapState({
           IS_BURGER: state => state.burger
         })
-
     },
     components: {
         Menu
@@ -45,5 +44,8 @@ export default {
             }
         }
     },
+    mounted () {
+      this.$store.commit('BURGER', false)
+    }
 }
 </script>

@@ -23,16 +23,16 @@
   align-items: center;
   justify-content: center;
   img{
-    animation: zoom 2s ease infinite;
+    animation: zoom 2.5s ease infinite;
   }
 }
 
 @keyframes zoom {
   0%, 100% {
-    transform: scale(1);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.3);
+    opacity: 0;
   }
 }
 </style>
