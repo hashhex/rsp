@@ -93,6 +93,18 @@ export default {
     if (this.INDEX_PAGE) {
       this.$nextTick(() => this.scrollPage());
     }
+  },
+  head: {
+    bodyAttrs: {
+      class: 'overflow-hidden'
+    }
   }
 }
 </script>
+
+
+<style scoped>
+  body{
+    overflow: hidden;
+  }
+</style>

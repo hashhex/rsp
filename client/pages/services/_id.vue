@@ -22,7 +22,7 @@
                         </div>
                     </template>
                     <template v-else-if="GROUP_CASES && !GROUP_CASES.length">
-                        Ни найдено.
+                      <p></p>
                     </template>
                     <template v-else>
                         Загрузка...

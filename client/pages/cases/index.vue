@@ -11,7 +11,7 @@
                         <div v-if="SERVICES" class="filter-cases--control">
                             <ul>
                                 <li v-for="service of SERVICES" :key="service.id">
-                                    <a @click.prevent="filterHandler(service.slug)" :class="activeFilter.includes(service.slug) ? `active ${service.color}` : service.color"  class="blue" >{{ service.title }}<span @click.stop="deletFilter(service.slug)"></span></a>
+                                    <a @click.prevent="filterHandler(service.slug)" :class="activeFilter.includes(service.slug) ? `active ${service.color}` : service.color"  >{{ service.title }}<span @click.stop="deletFilter(service.slug)"></span></a>
                                 </li>
                             </ul>
                         </div>

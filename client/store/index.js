@@ -1,7 +1,9 @@
 export const state = () => ({
     services: null,
     settings: null,
-    burger: false
+    burger: false,
+    staffs: null,
+    staffItem: null
 })
 
 export const mutations = {
@@ -13,6 +15,18 @@ export const mutations = {
     },
     BURGER (state, payload) {
         state.burger = payload
+    },
+    STAFFS (state, payload) {
+        state.staffs = payload
+    },
+    STAFF_ITEM (state, payload) {
+        if (Array.isArray(payload)) {
+            let [ item ] = payload
+            state.staffItem = item
+        } else {
+            state.staffItem = payload
+        }
+
     }
 }
 
@@ -62,6 +76,36 @@ export const actions = {
             }
         } catch (error) {
             console.error('subscribe-error ', error);
+            return false
+        }
+    },
+    async Staffs ({ commit }) {
+        try {
+            const { status, data } = await this.$axios.get('/employees')
+
+            if (status === 200) {
+                commit('STAFFS', data)
+            } else {
+                console.error('staffs-error ', status);
+                return false
+            }
+        } catch (error) {
+            console.error('staffs-error ', error);
+            return false
+        }
+    },
+    async StaffItem ({ commit } ,slug) {
+        try {
+            const { status, data } = await this.$axios.get(`/employees?_where[slug]=${slug}`)
+
+            if (status === 200) {
+                commit('STAFF_ITEM', data)
+            } else {
+                console.error('staff-item-error ', status);
+                return false
+            }
+        } catch (error) {
+            console.error('staff-item-error ', error);
             return false
         }
     },

@@ -7,7 +7,7 @@
                         Загрузка...
                     </template>
                     <template v-if="CASE_ITEM && !CASE_ITEM.length">
-                        Ни чего не найдено.
+                      <p></p>
                     </template>
                     <template v-if="CASE_ITEM && CASE_ITEM.length">
                         <MetaData :meta-data="CASE_ITEM[0].meta_data" />
