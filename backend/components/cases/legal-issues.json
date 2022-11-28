@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_cases_legal_issues",
+  "info": {
+    "name": "legal_issues",
+    "icon": "arrow-alt-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

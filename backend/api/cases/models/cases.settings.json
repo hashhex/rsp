@@ -29,13 +29,34 @@
     "preview_text": {
       "type": "text"
     },
-    "case_elements": {
-      "type": "component",
-      "repeatable": true,
-      "component": "cases.case-elements"
-    },
     "service": {
       "model": "services"
+    },
+    "before": {
+      "type": "date"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "legal_issues": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cases.legal-issues"
+    },
+    "problems_project": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cases.legal-issues"
+    },
+    "facts_figures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cases.facts-figures"
+    },
+    "areas_law": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cases.legal-issues"
     }
   }
 }
