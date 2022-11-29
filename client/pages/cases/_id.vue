@@ -30,6 +30,7 @@
                                 <div>
                                     <article v-if="CASE_ITEM[0].content" v-html="contentMarked(CASE_ITEM[0].content)"></article>
                                 </div>
+                                
                                 <div>
                                     <template v-if="CASE_ITEM[0].facts_figures && CASE_ITEM[0].facts_figures.length">
                                         <h2>Цифры и факты</h2>
@@ -40,12 +41,11 @@
                                             </div>
                                         </div>
                                     </template>
-                                    
-                                    <template v-if="CASE_ITEM[0].areas_law && CASE_ITEM[0].areas_law.length">
-                                        <h2>Затронутые сферы права</h2>
-                                        <ul>
+                                    <template v-if="CASE_ITEM[0].areas_law">
+                                        <h2 v-if="CASE_ITEM[0].areas_law.title">{{ CASE_ITEM[0].areas_law.title }}</h2>
+                                        <ul v-if="CASE_ITEM[0].areas_law.item && CASE_ITEM[0].areas_law.item.length">
                                             <li
-                                                v-for="item of CASE_ITEM[0].areas_law"
+                                                v-for="item of CASE_ITEM[0].areas_law.item"
                                                 :key="item.id"
                                             >{{ item.name }}</li>
                                         </ul>
@@ -54,21 +54,21 @@
                                 </div>
                                 <div>
                                     <article>
-                                        <template v-if="CASE_ITEM[0].legal_issues && CASE_ITEM[0].legal_issues.length">
-                                            <h2>Основные правовые вопросы</h2>
-                                            <ul>
+                                        <template v-if="CASE_ITEM[0].types">
+                                            <h2 v-if="CASE_ITEM[0].types.title">{{ CASE_ITEM[0].types.title }}</h2>
+                                            <ul v-if="CASE_ITEM[0].types.item && CASE_ITEM[0].types.item.length">
                                                 <li
-                                                    v-for="item of CASE_ITEM[0].legal_issues"
+                                                    v-for="item of CASE_ITEM[0].types.item"
                                                     :key="item.id"
                                                 >{{ item.name }}</li>
                                             </ul>
                                         </template>
 
-                                        <template v-if="CASE_ITEM[0].problems_project && CASE_ITEM[0].problems_project.length">
-                                            <h2>Основные правовые вопросы</h2>
-                                            <ul>
+                                        <template v-if="CASE_ITEM[0].legal_issues">
+                                            <h2 v-if="CASE_ITEM[0].legal_issues.title">{{ CASE_ITEM[0].legal_issues.title }}</h2>
+                                            <ul v-if="CASE_ITEM[0].legal_issues.item && CASE_ITEM[0].legal_issues.item.length">
                                                 <li
-                                                    v-for="item of CASE_ITEM[0].problems_project"
+                                                    v-for="item of CASE_ITEM[0].legal_issues.item"
                                                     :key="item.id"
                                                 >{{ item.name }}</li>
                                             </ul>

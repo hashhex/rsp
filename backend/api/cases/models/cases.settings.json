@@ -38,25 +38,25 @@
     "content": {
       "type": "richtext"
     },
-    "legal_issues": {
-      "type": "component",
-      "repeatable": true,
-      "component": "cases.legal-issues"
-    },
-    "problems_project": {
-      "type": "component",
-      "repeatable": true,
-      "component": "cases.legal-issues"
-    },
     "facts_figures": {
       "type": "component",
       "repeatable": true,
       "component": "cases.facts-figures"
     },
+    "types": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cases.types"
+    },
+    "legal_issues": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cases.types"
+    },
     "areas_law": {
       "type": "component",
-      "repeatable": true,
-      "component": "cases.legal-issues"
+      "repeatable": false,
+      "component": "cases.types"
     }
   }
 }
