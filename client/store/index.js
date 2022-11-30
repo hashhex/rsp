@@ -96,7 +96,7 @@ export const actions = {
     },
     async StaffItem ({ commit } ,slug) {
         try {
-            const { status, data } = await this.$axios.get(`/employees?_where[slug]=${slug}`)
+            const { status, data } = await this.$axios.get(`/employees?_where[id]=${slug}`)
 
             if (status === 200) {
                 commit('STAFF_ITEM', data)
