@@ -77,13 +77,17 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseUrl: 'https://rsp.fvds.ru/api'
+    baseUrl: 'https://rsplaw.ru/api'
   },
   env: {
-    backend: 'https://rsp.fvds.ru/api'
+    backend: 'https://rsplaw.ru/api'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 3000
   }
 }
