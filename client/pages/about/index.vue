@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section class="section active section-heigth--auto">
-      <section v-if="ABOUT" class="section-about">
+    <section  class="section active section-heigth--auto">
+      <section v-if="ABOUT && !dev" class="section-about">
         <TopLine />
         <MetaData :meta-data="ABOUT.meta_data" />
         <div class="container">
@@ -13,6 +13,19 @@
 
         <Staffs />
 
+      </section>
+      <section v-else class="section-about">
+        <TopLine />
+        <MetaData :meta-data="{
+          title: 'Страница в разработке',
+          description: 'Страница в разработке',
+          key: 'Страница, в, разработке'
+        }" />
+        <div class="container">
+          <div class="header-block">
+            <h1>Страница в разработке</h1>
+          </div>
+        </div>
       </section>
     </section>
     <Footer :active="'active non-shadow'" />
@@ -28,6 +41,11 @@ import Staffs from '~/components/staffs'
 
 export default {
   name: 'aboutPage',
+  data () {
+    return {
+      dev: true
+    }
+  },
   async fetch () {
     await this.$store.dispatch('pages/Pages', {
       state: 'about',
