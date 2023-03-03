@@ -1,7 +1,7 @@
 <template>
   <div>
     <section  class="section active section-heigth--auto">
-      <section class="section--staff-item">
+      <section v-if="!dev" class="section--staff-item">
         <TopLine />
         <MetaData v-if="STAFF" :meta-data="STAFF.meta_data" />
         <div v-if="STAFF" class="container">
@@ -24,6 +24,17 @@
           Ни найдено.
         </div>
       </section>
+      <section class="section--staff-item">
+        <TopLine />
+        <MetaData v-if="STAFF" :meta-data="{
+          title: 'Страница в разработке',
+          description: 'Страница в разработке',
+          key: 'Страница, в, разработке'
+        }" />
+        <div class="container">
+          <h1>Страница в разработке</h1>
+        </div>
+      </section>
     </section>
     <Footer :active="'active non-shadow'" />
   </div>
@@ -40,7 +51,8 @@ export default {
   name: 'staffItem',
   data () {
     return {
-      backend: process.env.backend
+      backend: process.env.backend,
+      dev: true
     }
   },
   async fetch () {
