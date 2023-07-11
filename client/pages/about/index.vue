@@ -43,7 +43,7 @@ export default {
   name: 'aboutPage',
   data () {
     return {
-      dev: true
+      dev: false
     }
   },
   async fetch () {

@@ -24,7 +24,7 @@
           Ни найдено.
         </div>
       </section>
-      <section class="section--staff-item">
+      <section v-else class="section--staff-item">
         <TopLine />
         <MetaData v-if="STAFF" :meta-data="{
           title: 'Страница в разработке',
@@ -52,7 +52,7 @@ export default {
   data () {
     return {
       backend: process.env.backend,
-      dev: true
+      dev: false
     }
   },
   async fetch () {
